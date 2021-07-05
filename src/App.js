@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import ContactDisplay from "./components/ContactDisplay";
+import ContactInput from "./components/ContactInput";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [Edit_id, SetEdit_id] = useState("");
+  console.log(Edit_id);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="bg-gray-200 h-screen w-screen flex justify-between items-center">
+        <ContactInput Edit_id={Edit_id} />
+        <ContactDisplay SetEdit_id={SetEdit_id} />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
